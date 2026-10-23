@@ -1,0 +1,903 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2026  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.69+154 (git sha1 30d62572e, GNU /usr/bin/c++ 15.2.0)
+
+-- Executing script file `yosys_results/mapped/map_lemmings.ys' --
+
+1. Executing Liberty frontend: /home/vidit/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+Imported 135 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: Lemmings4.v
+Parsing Verilog input from `Lemmings4.v' to AST representation.
+Generating RTLIL representation for module `\Lemmings4'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \Lemmings4
+
+3.2. Analyzing design hierarchy..
+Top module:  \Lemmings4
+Removed 0 unused modules.
+
+4. Executing SYNTH pass.
+
+4.1. Executing HIERARCHY pass (managing design hierarchy).
+
+4.1.1. Analyzing design hierarchy..
+Top module:  \Lemmings4
+
+4.1.2. Analyzing design hierarchy..
+Top module:  \Lemmings4
+Removed 0 unused modules.
+
+4.2. Executing PROC pass (convert processes to netlists).
+
+4.2.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 3 switch rules as full_case in process $proc$Lemmings4.v:89$8 in module Lemmings4.
+Marked 13 switch rules as full_case in process $proc$Lemmings4.v:23$1 in module Lemmings4.
+Removed a total of 0 dead cases.
+
+4.2.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 1 redundant assignment.
+Promoted 1 assignment to connection.
+
+4.2.4. Executing PROC_INIT pass (extract init attributes).
+
+4.2.5. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \areset in `\Lemmings4.$proc$Lemmings4.v:89$8'.
+
+4.2.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~16 debug messages>
+
+4.2.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\Lemmings4.$proc$Lemmings4.v:89$8'.
+     1/2: $0\state[2:0]
+     2/2: $0\n[4:0]
+Creating decoders for process `\Lemmings4.$proc$Lemmings4.v:23$1'.
+     1/13: $13\next_state[2:0]
+     2/13: $12\next_state[2:0]
+     3/13: $11\next_state[2:0]
+     4/13: $10\next_state[2:0]
+     5/13: $9\next_state[2:0]
+     6/13: $8\next_state[2:0]
+     7/13: $7\next_state[2:0]
+     8/13: $6\next_state[2:0]
+     9/13: $5\next_state[2:0]
+    10/13: $4\next_state[2:0]
+    11/13: $3\next_state[2:0]
+    12/13: $2\next_state[2:0]
+    13/13: $1\next_state[2:0]
+
+4.2.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\Lemmings4.\next_state' from process `\Lemmings4.$proc$Lemmings4.v:23$1'.
+
+4.2.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\Lemmings4.\state' using process `\Lemmings4.$proc$Lemmings4.v:89$8'.
+  created $adff cell `$procdff$190' with positive edge clock and positive level reset.
+Creating register for signal `\Lemmings4.\n' using process `\Lemmings4.$proc$Lemmings4.v:89$8'.
+  created $adff cell `$procdff$193' with positive edge clock and positive level reset.
+
+4.2.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.2.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 3 empty switches in `\Lemmings4.$proc$Lemmings4.v:89$8'.
+Removing empty process `Lemmings4.$proc$Lemmings4.v:89$8'.
+Found and cleaned up 13 empty switches in `\Lemmings4.$proc$Lemmings4.v:23$1'.
+Removing empty process `Lemmings4.$proc$Lemmings4.v:23$1'.
+Cleaned up 16 empty switches.
+
+4.2.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+<suppressed ~15 debug messages>
+
+4.3. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+
+4.4. Executing CHECK pass (checking for obvious problems).
+Checking module Lemmings4...
+Found and reported 0 problems.
+
+4.5. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+Removed 4 unused cells and 50 unused wires.
+<suppressed ~5 debug messages>
+
+4.6. Executing OPT pass (performing simple optimizations).
+
+4.6.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+
+4.6.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 75 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Computing hashes of 54 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Computing hashes of 53 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+<suppressed ~66 debug messages>
+Removed a total of 22 cells.
+
+4.6.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Lemmings4..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$119.
+    dead port 2/2 on $mux $procmux$107.
+    dead port 2/2 on $mux $procmux$105.
+    dead port 1/2 on $mux $procmux$102.
+    dead port 2/2 on $mux $procmux$90.
+    dead port 2/2 on $mux $procmux$80.
+    dead port 2/2 on $mux $procmux$78.
+    dead port 2/2 on $mux $procmux$67.
+    dead port 2/2 on $mux $procmux$177.
+    dead port 2/2 on $mux $procmux$58.
+    dead port 2/2 on $mux $procmux$56.
+    dead port 2/2 on $mux $procmux$46.
+    dead port 2/2 on $mux $procmux$38.
+    dead port 2/2 on $mux $procmux$165.
+    dead port 2/2 on $mux $procmux$163.
+    dead port 2/2 on $mux $procmux$150.
+    dead port 2/2 on $mux $procmux$148.
+    dead port 2/2 on $mux $procmux$121.
+    dead port 1/2 on $mux $procmux$145.
+    dead port 2/2 on $mux $procmux$132.
+Removed 20 multiplexer ports.
+<suppressed ~38 debug messages>
+
+4.6.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Lemmings4.
+Performed a total of 0 changes.
+
+4.6.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 33 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Removed a total of 0 cells.
+
+4.6.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+Removed 0 unused cells and 42 unused wires.
+<suppressed ~1 debug messages>
+
+4.6.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+
+4.6.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.6.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Lemmings4..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~18 debug messages>
+
+4.6.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Lemmings4.
+Performed a total of 0 changes.
+
+4.6.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 33 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Removed a total of 0 cells.
+
+4.6.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.6.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+
+4.6.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+
+4.6.16. Finished fast OPT passes. (There is nothing left to do.)
+
+4.7. Executing FSM pass (extract and optimize FSM).
+
+4.7.1. Executing FSM_DETECT pass (finding FSMs in design).
+Found FSM state register Lemmings4.state.
+
+4.7.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+Extracting FSM `\state' from module `\Lemmings4'.
+  found $adff cell for state register: $procdff$190
+  root of input selection tree: \next_state
+  found reset state: 3'000 (from async reset)
+  found ctrl input: $procmux$181_CMP
+  found ctrl input: $eq$Lemmings4.v:113$23_Y
+  found ctrl input: $eq$Lemmings4.v:113$22_Y
+  found ctrl input: $eq$Lemmings4.v:112$20_Y
+  found ctrl input: $eq$Lemmings4.v:112$19_Y
+  found ctrl input: \walk_right
+  found ctrl input: \walk_left
+  found state code: 3'110
+  found ctrl input: \ground
+  found state code: 3'011
+  found state code: 3'101
+  found state code: 3'010
+  found state code: 3'100
+  found ctrl input: $gt$Lemmings4.v:47$4_Y
+  found state code: 3'001
+  found ctrl input: \dig
+  found ctrl input: \bump_right
+  found ctrl input: \bump_left
+  found ctrl output: \walk_right
+  found ctrl output: \walk_left
+  found ctrl output: $procmux$181_CMP
+  found ctrl output: $eq$Lemmings4.v:113$23_Y
+  found ctrl output: $eq$Lemmings4.v:113$22_Y
+  found ctrl output: $eq$Lemmings4.v:112$20_Y
+  found ctrl output: $eq$Lemmings4.v:112$19_Y
+  ctrl inputs: { $gt$Lemmings4.v:47$4_Y \dig \ground \bump_right \bump_left }
+  ctrl outputs: { $procmux$181_CMP $eq$Lemmings4.v:113$23_Y $eq$Lemmings4.v:113$22_Y $eq$Lemmings4.v:112$20_Y $eq$Lemmings4.v:112$19_Y \next_state \walk_right \walk_left }
+  transition:      3'000 5'--0-- ->      3'010 10'0000001001
+  transition:      3'000 5'-01-0 ->      3'000 10'0000000001
+  transition:      3'000 5'-01-1 ->      3'001 10'0000000101
+  transition:      3'000 5'-11-- ->      3'100 10'0000010001
+  transition:      3'100 5'--0-- ->      3'010 10'0010001000
+  transition:      3'100 5'--1-- ->      3'100 10'0010010000
+  transition:      3'010 5'--0-- ->      3'010 10'0000101000
+  transition:      3'010 5'0-1-- ->      3'000 10'0000100000
+  transition:      3'010 5'1-1-- ->      3'110 10'0000111000
+  transition:      3'110 5'----- ->      3'110 10'1000011000
+  transition:      3'001 5'--0-- ->      3'011 10'0000001110
+  transition:      3'001 5'-010- ->      3'001 10'0000000110
+  transition:      3'001 5'-011- ->      3'000 10'0000000010
+  transition:      3'001 5'-11-- ->      3'101 10'0000010110
+  transition:      3'101 5'--0-- ->      3'011 10'0100001100
+  transition:      3'101 5'--1-- ->      3'101 10'0100010100
+  transition:      3'011 5'--0-- ->      3'011 10'0001001100
+  transition:      3'011 5'0-1-- ->      3'001 10'0001000100
+  transition:      3'011 5'1-1-- ->      3'110 10'0001011000
+
+4.7.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$194' from module `\Lemmings4'.
+
+4.7.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+Removed 21 unused cells and 21 unused wires.
+<suppressed ~22 debug messages>
+
+4.7.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+Optimizing FSM `$fsm$\state$194' from module `\Lemmings4'.
+  Removing unused output signal $procmux$181_CMP.
+
+4.7.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+Recoding FSM `$fsm$\state$194' from module `\Lemmings4' using `auto' encoding:
+  mapping auto encoding to `one-hot` for this FSM.
+  000 -> ------1
+  100 -> -----1-
+  010 -> ----1--
+  110 -> ---1---
+  001 -> --1----
+  101 -> -1-----
+  011 -> 1------
+
+4.7.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+FSM `$fsm$\state$194' from module `Lemmings4':
+-------------------------------------
+
+  Information on FSM $fsm$\state$194 (\state):
+
+  Number of input signals:    5
+  Number of output signals:   9
+  Number of state bits:       7
+
+  Input signals:
+    0: \bump_left
+    1: \bump_right
+    2: \ground
+    3: \dig
+    4: $gt$Lemmings4.v:47$4_Y
+
+  Output signals:
+    0: \walk_left
+    1: \walk_right
+    2: \next_state [0]
+    3: \next_state [1]
+    4: \next_state [2]
+    5: $eq$Lemmings4.v:112$19_Y
+    6: $eq$Lemmings4.v:112$20_Y
+    7: $eq$Lemmings4.v:113$22_Y
+    8: $eq$Lemmings4.v:113$23_Y
+
+  State encoding:
+    0:  7'------1  <RESET STATE>
+    1:  7'-----1-
+    2:  7'----1--
+    3:  7'---1---
+    4:  7'--1----
+    5:  7'-1-----
+    6:  7'1------
+
+  Transition Table (state_in, ctrl_in, state_out, ctrl_out):
+      0:     0 5'-01-0   ->     0 9'000000001
+      1:     0 5'-11--   ->     1 9'000010001
+      2:     0 5'--0--   ->     2 9'000001001
+      3:     0 5'-01-1   ->     4 9'000000101
+      4:     1 5'--1--   ->     1 9'010010000
+      5:     1 5'--0--   ->     2 9'010001000
+      6:     2 5'0-1--   ->     0 9'000100000
+      7:     2 5'--0--   ->     2 9'000101000
+      8:     2 5'1-1--   ->     3 9'000111000
+      9:     3 5'-----   ->     3 9'000011000
+     10:     4 5'-011-   ->     0 9'000000010
+     11:     4 5'-010-   ->     4 9'000000110
+     12:     4 5'-11--   ->     5 9'000010110
+     13:     4 5'--0--   ->     6 9'000001110
+     14:     5 5'--1--   ->     5 9'100010100
+     15:     5 5'--0--   ->     6 9'100001100
+     16:     6 5'1-1--   ->     3 9'001011000
+     17:     6 5'0-1--   ->     4 9'001000100
+     18:     6 5'--0--   ->     6 9'001001100
+
+-------------------------------------
+
+4.7.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+Mapping FSM `$fsm$\state$194' from module `\Lemmings4'.
+
+4.8. Executing OPT pass (performing simple optimizations).
+
+4.8.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+<suppressed ~7 debug messages>
+
+4.8.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 71 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Computing hashes of 57 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Computing hashes of 51 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+<suppressed ~60 debug messages>
+Removed a total of 20 cells.
+
+4.8.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Lemmings4..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.8.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Lemmings4.
+Performed a total of 0 changes.
+
+4.8.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 51 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Removed a total of 0 cells.
+
+4.8.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$193 ($adff) from module Lemmings4 (D = $0\n[4:0], Q = \n).
+
+4.8.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+Removed 0 unused cells and 30 unused wires.
+<suppressed ~1 debug messages>
+
+4.8.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+
+4.8.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.8.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Lemmings4..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.8.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Lemmings4.
+Performed a total of 0 changes.
+
+4.8.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 52 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Removed a total of 0 cells.
+
+4.8.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.8.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+
+4.8.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+
+4.8.16. Finished fast OPT passes. (There is nothing left to do.)
+
+4.9. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 2) from port B of cell Lemmings4.$auto$simple.cc:194:make_patterns_logic$323 ($ne).
+Removed top 1 bits (of 2) from port B of cell Lemmings4.$auto$fsm_map.cc:77:implement_pattern_cache$289 ($eq).
+Removed top 1 bits (of 3) from port B of cell Lemmings4.$auto$fsm_map.cc:77:implement_pattern_cache$275 ($eq).
+Removed top 1 bits (of 3) from port B of cell Lemmings4.$auto$fsm_map.cc:77:implement_pattern_cache$271 ($eq).
+Removed top 1 bits (of 3) from port B of cell Lemmings4.$auto$fsm_map.cc:77:implement_pattern_cache$212 ($eq).
+Removed top 1 bits (of 3) from port B of cell Lemmings4.$auto$fsm_map.cc:77:implement_pattern_cache$208 ($eq).
+Removed top 1 bits (of 3) from port B of cell Lemmings4.$eq$Lemmings4.v:101$14 ($eq).
+Removed top 1 bits (of 3) from port B of cell Lemmings4.$eq$Lemmings4.v:101$15 ($eq).
+Removed top 4 bits (of 5) from mux cell Lemmings4.$procmux$26 ($mux).
+Removed top 4 bits (of 5) from wire Lemmings4.$procmux$26_Y.
+
+4.10. Executing PEEPOPT pass (run peephole optimizers).
+
+4.11. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+4.12. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module Lemmings4:
+  creating $macc model for $add$Lemmings4.v:99$13 ($add).
+  creating $alu model for $macc $add$Lemmings4.v:99$13.
+  creating $alu model for $lt$Lemmings4.v:98$12 ($lt): new $alu
+  creating $alu model for $gt$Lemmings4.v:58$5 ($gt): new $alu
+  creating $alu cell for $gt$Lemmings4.v:58$5: $auto$alumacc.cc:576:replace_alu$327
+  creating $alu cell for $lt$Lemmings4.v:98$12: $auto$alumacc.cc:576:replace_alu$338
+  creating $alu cell for $add$Lemmings4.v:99$13: $auto$alumacc.cc:576:replace_alu$343
+  created 3 $alu and 0 $macc cells.
+
+4.13. Executing SHARE pass (SAT-based resource sharing).
+
+4.14. Executing OPT pass (performing simple optimizations).
+
+4.14.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+<suppressed ~1 debug messages>
+
+4.14.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 57 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Removed a total of 0 cells.
+
+4.14.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Lemmings4..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.14.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Lemmings4.
+Performed a total of 0 changes.
+
+4.14.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 57 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Removed a total of 0 cells.
+
+4.14.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+Removed 0 unused cells and 2 unused wires.
+<suppressed ~1 debug messages>
+
+4.14.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+
+4.14.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+4.14.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Lemmings4..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+4.14.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Lemmings4.
+Performed a total of 0 changes.
+
+4.14.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 57 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Removed a total of 0 cells.
+
+4.14.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.14.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+
+4.14.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+
+4.14.16. Finished fast OPT passes. (There is nothing left to do.)
+
+4.15. Executing MEMORY pass.
+
+4.15.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+4.15.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+4.15.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+4.15.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+4.15.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+4.15.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+
+4.15.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+4.15.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+4.15.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+
+4.15.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+4.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+
+4.17. Executing OPT pass (performing simple optimizations).
+
+4.17.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+<suppressed ~3 debug messages>
+
+4.17.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 57 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Removed a total of 0 cells.
+
+4.17.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.17.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+4.17.5. Finished fast OPT passes.
+
+4.18. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+4.19. Executing OPT pass (performing simple optimizations).
+
+4.19.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+
+4.19.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 57 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Removed a total of 0 cells.
+
+4.19.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \Lemmings4..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~2 debug messages>
+
+4.19.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \Lemmings4.
+Performed a total of 0 changes.
+
+4.19.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 57 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Removed a total of 0 cells.
+
+4.19.6. Executing OPT_SHARE pass.
+
+4.19.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.19.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+
+4.19.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+
+4.19.10. Finished fast OPT passes. (There is nothing left to do.)
+
+4.20. Executing TECHMAP pass (map to technology primitives).
+
+4.20.1. Executing Verilog-2005 frontend: /usr/local/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/usr/local/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu_brent_kung'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `$__div_mod_u'.
+Generating RTLIL representation for module `$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Generating RTLIL representation for module `$connect'.
+Generating RTLIL representation for module `$input_port'.
+Successfully finished Verilog frontend.
+
+4.20.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $not.
+Using template $paramod$672a140277c71df8314410f22acc08d55222c3c7\_90_alu for cells of type $alu.
+Using template $paramod$b18e16801adf491a64caa0542270798e5d4ac6b6\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $or.
+Using extmapper simplemap for cells of type $reduce_and.
+Using template $paramod$78e969f2586efcf3a5b0b0440bcca0db83d5cca2\_90_alu for cells of type $alu.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $adff.
+Using extmapper simplemap for cells of type $logic_or.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $xor.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000101 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000101 for cells of type $lcu.
+Using extmapper simplemap for cells of type $pos.
+Using template $paramod\_90_fa\WIDTH=32'00000000000000000000000000000011 for cells of type $fa.
+Using template $paramod\_90_lcu_brent_kung\WIDTH=32'00000000000000000000000000000011 for cells of type $lcu.
+No more expansions possible.
+<suppressed ~451 debug messages>
+
+4.21. Executing OPT pass (performing simple optimizations).
+
+4.21.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module Lemmings4.
+<suppressed ~136 debug messages>
+
+4.21.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\Lemmings4'.
+Computing hashes of 147 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Computing hashes of 126 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+Computing hashes of 125 cells of `\Lemmings4'.
+Finding duplicate cells in `\Lemmings4'.
+<suppressed ~66 debug messages>
+Removed a total of 22 cells.
+
+4.21.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+4.21.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \Lemmings4..
+Removed 10 unused cells and 188 unused wires.
+<suppressed ~11 debug messages>
+
+4.21.5. Finished fast OPT passes.
+
+4.22. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `Lemmings4'. Setting top module to Lemmings4.
+
+4.22.1. Analyzing design hierarchy..
+Top module:  \Lemmings4
+
+4.22.2. Analyzing design hierarchy..
+Top module:  \Lemmings4
+Removed 0 unused modules.
+
+4.23. Printing statistics.
+
+=== Lemmings4 ===
+
+        +----------Local Count, excluding submodules.
+        | 
+       92 wires
+      146 wire bits
+       13 public wires
+       25 public wire bits
+       10 ports
+       10 port bits
+      115 cells
+       28   $_AND_
+        5   $_DFFE_PP0P_
+        6   $_DFF_PP0_
+        1   $_DFF_PP1_
+        5   $_MUX_
+       22   $_NOT_
+       44   $_OR_
+        4   $_XOR_
+
+4.24. Executing CHECK pass (checking for obvious problems).
+Checking module Lemmings4...
+Found and reported 0 problems.
+
+5. Executing DFFLIBMAP pass (mapping DFF/DLATCH cells to sequential cells from liberty file).
+  cell DFF_X1 (noninv, pins=4, area=4.52) is a direct match for cell type $_DFF_P_.
+  cell DFFR_X1 (noninv, pins=5, area=5.32) is a direct match for cell type $_DFF_PN0_.
+  cell DFFS_X1 (noninv, pins=5, area=5.32) is a direct match for cell type $_DFF_PN1_.
+  cell DFFRS_X1 (noninv, pins=6, area=6.38) is a direct match for cell type $_DFFSR_PNN_.
+  cell DLL_X1 (noninv, pins=3, area=2.66) is a direct match for cell type $_DLATCH_N_.
+  cell DLH_X1 (noninv, pins=3, area=2.66) is a direct match for cell type $_DLATCH_P_.
+  final dff/dlatch cell mappings:
+    unmapped dff/dlatch cell: $_DFF_N_
+    \DFF_X1 _DFF_P_ (.CK( C), .D( D), .Q( Q), .QN(~Q));
+    unmapped dff/dlatch cell: $_DFF_NN0_
+    unmapped dff/dlatch cell: $_DFF_NN1_
+    unmapped dff/dlatch cell: $_DFF_NP0_
+    unmapped dff/dlatch cell: $_DFF_NP1_
+    \DFFR_X1 _DFF_PN0_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .RN( R));
+    \DFFS_X1 _DFF_PN1_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .SN( R));
+    unmapped dff/dlatch cell: $_DFF_PP0_
+    unmapped dff/dlatch cell: $_DFF_PP1_
+    unmapped dff/dlatch cell: $_DFFE_NN_
+    unmapped dff/dlatch cell: $_DFFE_NP_
+    unmapped dff/dlatch cell: $_DFFE_PN_
+    unmapped dff/dlatch cell: $_DFFE_PP_
+    unmapped dff/dlatch cell: $_DFFSR_NNN_
+    unmapped dff/dlatch cell: $_DFFSR_NNP_
+    unmapped dff/dlatch cell: $_DFFSR_NPN_
+    unmapped dff/dlatch cell: $_DFFSR_NPP_
+    \DFFRS_X1 _DFFSR_PNN_ (.CK( C), .D( D), .Q( Q), .QN(~Q), .RN( R), .SN( S));
+    unmapped dff/dlatch cell: $_DFFSR_PNP_
+    unmapped dff/dlatch cell: $_DFFSR_PPN_
+    unmapped dff/dlatch cell: $_DFFSR_PPP_
+    \DLL_X1 _DLATCH_N_ (.D( D), .GN( E), .Q( Q));
+    \DLH_X1 _DLATCH_P_ (.D( D), .G( E), .Q( Q));
+    unmapped dff/dlatch cell: $_DLATCH_NN0_
+    unmapped dff/dlatch cell: $_DLATCH_NN1_
+    unmapped dff/dlatch cell: $_DLATCH_NP0_
+    unmapped dff/dlatch cell: $_DLATCH_NP1_
+    unmapped dff/dlatch cell: $_DLATCH_PN0_
+    unmapped dff/dlatch cell: $_DLATCH_PN1_
+    unmapped dff/dlatch cell: $_DLATCH_PP0_
+    unmapped dff/dlatch cell: $_DLATCH_PP1_
+    unmapped dff/dlatch cell: $_DLATCHSR_NNN_
+    unmapped dff/dlatch cell: $_DLATCHSR_NNP_
+    unmapped dff/dlatch cell: $_DLATCHSR_NPN_
+    unmapped dff/dlatch cell: $_DLATCHSR_NPP_
+    unmapped dff/dlatch cell: $_DLATCHSR_PNN_
+    unmapped dff/dlatch cell: $_DLATCHSR_PNP_
+    unmapped dff/dlatch cell: $_DLATCHSR_PPN_
+    unmapped dff/dlatch cell: $_DLATCHSR_PPP_
+
+5.1. Executing DFFLEGALIZE pass (convert FFs and LATCHes to types supported by the target).
+<suppressed ~8 debug messages>
+Mapping DFF/DLATCH cells in module `\Lemmings4':
+  mapped 11 $_DFF_PN0_ cells to \DFFR_X1 cells.
+  mapped 1 $_DFF_PN1_ cells to \DFFS_X1 cells.
+
+6. Executing ABC pass (technology mapping using ABC).
+
+6.1. Summary of detected clock domains:
+  132 cells in clk={ }, en={ }, arst={ }, srst={ }
+
+6.2. Extracting gate netlist of module `\Lemmings4' to `<abc-temp-dir>/input.blif'..
+ABC: using cached merged SCL: /tmp/yosys-liberty-scl-cache-1000/yosys_merged_af806069.scl (1 files)
+No matching clock domain found. Not extracting any FF cells.
+
+6.2.1. Executed ABC.
+Extracted 120 gates and 141 wires to a netlist network with 20 inputs and 26 outputs.
+Running ABC script: <abc-temp-dir>/abc.script
+ABC: UC Berkeley, ABC 1.01 (compiled Sep 28 2026 06:07:04)
+ABC: abc 01> empty
+ABC: abc 01> source <abc-temp-dir>/abc.script
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_scl /tmp/yosys-liberty-scl-cache-1000/yosys_merged_af806069.scl 
+ABC: Warning: Detected 2 multi-output cells (for example, "FA_X1").
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &fraig -x 
+ABC: + &put 
+ABC: + scorr 
+ABC: Warning: The network is combinational (run "fraig" or "fraig_sweep").
+ABC: + dc2 
+ABC: + dretime 
+ABC: + strash 
+ABC: + &get -n 
+ABC: + &dch -f 
+ABC: + &nf 
+ABC: + &put 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+ABC: 
+ABC: YOSYS_ABC_DONE 
+
+6.2.2. Re-integrating ABC results.
+ABC RESULTS:           AND2_X1 cells:        2
+ABC RESULTS:           AND4_X1 cells:        1
+ABC RESULTS:         AOI211_X1 cells:        1
+ABC RESULTS:          AOI21_X1 cells:        6
+ABC RESULTS:          AOI22_X1 cells:        2
+ABC RESULTS:            INV_X1 cells:       22
+ABC RESULTS:           MUX2_X1 cells:        2
+ABC RESULTS:          NAND2_X1 cells:        4
+ABC RESULTS:          NAND3_X1 cells:        1
+ABC RESULTS:           NOR2_X1 cells:        6
+ABC RESULTS:           NOR3_X1 cells:        1
+ABC RESULTS:         OAI211_X1 cells:        1
+ABC RESULTS:          OAI21_X1 cells:        4
+ABC RESULTS:          OAI22_X1 cells:        2
+ABC RESULTS:            OR2_X1 cells:        1
+ABC RESULTS:            OR3_X1 cells:        2
+ABC RESULTS:          XNOR2_X1 cells:        1
+ABC RESULTS:        internal signals:       95
+ABC RESULTS:           input signals:       20
+ABC RESULTS:          output signals:       26
+Removing temp directory.
+Removing global temp directory.
+Removed 0 unused cells and 122 unused wires.
+
+7. Executing CHECK pass (checking for obvious problems).
+Checking module Lemmings4...
+Found and reported 0 problems.
+
+8. Printing statistics.
+
+=== Lemmings4 ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+       81        - wires
+      101        - wire bits
+       12        - public wires
+       22        - public wire bits
+       10        - ports
+       10        - port bits
+       71   117.04 cells
+        2    2.128   AND2_X1
+        1    1.596   AND4_X1
+        1     1.33   AOI211_X1
+        6    6.384   AOI21_X1
+        2     2.66   AOI22_X1
+       11    58.52   DFFR_X1
+        1     5.32   DFFS_X1
+       22   11.704   INV_X1
+        2    3.724   MUX2_X1
+        4    3.192   NAND2_X1
+        1    1.064   NAND3_X1
+        6    4.788   NOR2_X1
+        1    1.064   NOR3_X1
+        1     1.33   OAI211_X1
+        4    4.256   OAI21_X1
+        2     2.66   OAI22_X1
+        1    1.064   OR2_X1
+        2     2.66   OR3_X1
+        1    1.596   XNOR2_X1
+
+   Chip area for module '\Lemmings4': 117.040000
+     of which used for sequential elements: 63.840000 (54.55%)
+
+9. Executing Verilog backend.
+Dumping module `\Lemmings4'.
+
+End of script. Logfile hash: 41cdc03396, time: 3.42s, user: 2.45s, system: 1.04s, MEM: 65.25 MB peak
+Yosys 0.69+154 (git sha1 30d62572e, GNU /usr/bin/c++ 15.2.0)
+Time spent: 18% 1x abc (0 sec), 15% 2x read_liberty (0 sec), ...

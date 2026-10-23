@@ -1,0 +1,15 @@
+read_liberty -lib /home/vidit/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+read_verilog Lemmings4.v
+hierarchy -check -top Lemmings4
+
+synth -top Lemmings4 -noabc
+
+dfflibmap -liberty /home/vidit/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+abc -liberty /home/vidit/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+clean
+check -mapped
+stat -liberty /home/vidit/OpenROAD-flow-scripts/flow/platforms/nangate45/lib/NangateOpenCellLibrary_typical.lib
+
+write_verilog -noattr -noexpr yosys_results/mapped/Lemmings4_mapped.v
